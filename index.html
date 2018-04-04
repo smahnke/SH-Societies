@@ -29,7 +29,7 @@
     
     var map = L.map('map', {
     	center:[31.65382722, -11.4278481], 
-	zoom: 20
+	zoom: 50
     });
     
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic21haG5rZSIsImEiOiJjajZ2NDVlcWowdmQ4MndtbjhuaXY1aDBiIn0.vtdvh938-CfB6DQkZnjehA', {
@@ -39,7 +39,7 @@
     	accessToken: 'your.mapbox.access.token'
     }).addTo(map);
 
-    var Paccm = L.marker([42.445686, -83.215482]).bindPopup('Philippine American Cultural Center of Michigan (PACCM). 17356 Northland Park Ct, Southfield, MI 48075<audio controls><source src="./audiojs/Sonrecording.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>').addTo(map);
+    var Baker = L.marker([48.144859, 16.297634]).bindPopup('Baker Street Vienna -- Silvia Groniewicz Anton-Baumgartnerstrasse 44/C5/1/1 1230 Vienna, Austria').addTo(map);
     
     var TenDecade=L.layerGroup([Paccm]);
 	
