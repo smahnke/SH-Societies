@@ -1,0 +1,264 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Fil-Am Settlement History, Michigan</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet-src.js"></script>
+    <!-- Audio plugin -->
+    <script src="./audiojs/audio.min.js"></script>
+    <script>
+      audiojs.events.ready(function() { 
+        audiojs.createAll();
+      });
+    </script>
+
+    <style type="text/css">
+        html, body { width: 100%; height: 100%; margin: 0; }
+	#map {height: 100%;}
+    </style>
+	  <header>
+		  <h3 style="display:inline"> The Michigan Filipinx Mapping Project </h3> <p style="display:inline"> In collaboration with <img src="https://github.com/smahnke/FilAmDet-History/blob/master/images/FANHS-MI.jpg?raw=true" style="width:100px;height=57"></p1>
+		  <p> The following map serves as an archive of the historic locations of Michigan's early Filipinx students, residents, and registered organizations. Data has been collected from government and university student directories, newsletters, ethnic directories, and Filipinx locals.</p>
+	  </header>
+  </head>
+	
+	
+  <body>
+  
+    <div id="map"></div>
+
+    <script src="../leaflet.js"></script>
+	
+    
+
+<script type="text/javascript">
+    
+    var map = L.map('map', {
+    	center:[42.399544, -83.137689], 
+	zoom: 7
+    });
+    
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoic21haG5rZSIsImEiOiJjajZ2NDVlcWowdmQ4MndtbjhuaXY1aDBiIn0.vtdvh938-CfB6DQkZnjehA', {
+    	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    	maxZoom: 18,
+    	id: 'mapbox.streets',
+    	accessToken: 'your.mapbox.access.token'
+    }).addTo(map);
+
+    var Paccm = L.marker([42.445686, -83.215482]).bindPopup('Philippine American Cultural Center of Michigan (PACCM). 17356 Northland Park Ct, Southfield, MI 48075<audio controls><source src="./audiojs/Sonrecording.mp3" type="audio/mpeg">Your browser does not support the audio element.</audio>').addTo(map);
+    
+    var TenDecade=L.layerGroup([Paccm]);
+	
+    var Aklanon= L.marker([42.577672, -82.991210]).bindPopup('Aklanon Club of Michigan. (1998), 13529 Clover Lawn, Sterling Heights, MI 48313').addTo(map),
+	Acj= L.marker([42.478472, -83.181911]).bindPopup('American Citizens for Justice. (1998), 13361 Ludlow, Huntington Woods, MI 48070').addTo(map),
+        AngBis= L.marker([42.457956, -83.448934]).bindPopup('Ang Bisaya Incorporated of Michigan (1998). 22911 Brookforest, Novi, MI 48375').addTo(map),
+	Apag= L.marker([42.289304, -83.285815]).bindPopup('Association of Philippine American Graduates (1998). 25421 Norfolk, Dearborn Heights, MI 48125').addTo(map),
+	Bicol= L.marker([42.599680, -83.286183]).bindPopup('Bicol Association of Michigan (1998). 2731 Acorn Rd., Bloomfield Hills, MI 48302').addTo(map),
+	Bolanon= L.marker([42.383914, -83.387330]).bindPopup('Bolanon Sa Michigan (1998). 14011 Riverside, Livonia, MI 48154').addTo(map),
+	Cagayan= L.marker([42.358331, -83.519356]).bindPopup('Cagayan Valley Association (1998). 48463 Normandy Court, Plymouth, MI 48170').addTo(map),
+	Central= L.marker([42.563278, -83.079018]).bindPopup('Central Philippines University Alumni Assoc.—Michigan and Windsor Chapter (1998). 36802 Park Place Dr., Sterling Heights, MI 48310').addTo(map),
+	Circulo= L.marker([42.581196, -82.932714]).bindPopup('Circulo Pampangueno of Michigan (1998). 38542 Santa Anna, Clinton Township, MI 48036').addTo(map),
+	Downriver= L.marker([42.249842, -83.206654]).bindPopup('Downriver Filipino American Association (1998). 15530 Oceana, Allen Park, MI 48101').addTo(map),
+	FarEast= L.marker([42.514828, -83.299178]).bindPopup('Far Eastern Univ. Alumni Assoc. (1998). 30850 Cheviot Hills Dr., Franklin, MI 48025').addTo(map),
+	FilAmClubPont= L.marker([42.686823, -83.361258]).bindPopup('Filipino American Club of Pontiac (1998). 3288 Loon Lake Shores, Drayton Plains, MI 48020').addTo(map),
+	Filamco= L.marker([42.466801, -83.205048]).bindPopup('Filipino American Community Council (Filamco) (1998). 15918 Mt. Vernon, Southfield MI 48075').addTo(map),
+	Fasa= L.marker([42.278026, -83.742364]).bindPopup('Filipino American Student Assoc. (1998). 555 E. William, Ann Arbor, MI 48103').addTo(map),
+	FilStuSoc= L.marker([42.357727, -83.070680]).bindPopup('Filipino Student Society (1998). Wayne State University, 351 Student Center Bldg., Detroit, MI 48202').addTo(map),
+	FilWomen= L.marker([42.613608, -83.242982]).bindPopup('Filipino Women’s Club of Metropolitan Detroit (1998). 1933 Hunters Ridge, Bloomfield Hills, MI 48013').addTo(map),
+	GreatLans= L.marker([42.734958, -84.563011]).bindPopup('Greater Lansing Filipino-American Club (1998). 732 W. Ottawa St., Lansing, MI 48915').addTo(map),
+	Ilocano= L.marker([42.591734, -83.253775]).bindPopup('Ilocano Asso. Of Michigan (1998). 60 Balfour, Bloomfield Hills, MI 48304').addTo(map),
+	Kabataan= L.marker([42.462438, -82.937607]).bindPopup('Kabataan Sanahang Philipino NG Michigan (1998). 22165 Normandy, Eastpointe, MI 48021').addTo(map),
+	Kahirup= L.marker([42.563440, -83.079809]).bindPopup('Kahirup Club of Michigan Inc. (1998). 36802 Park Place Dr., Sterling Heights, MI 48310').addTo(map),
+	KiwClubMetDet= L.marker([42.564179, -83.066114]).bindPopup('Kiwanas Club of Metropolitan North (1998). 4249 Coplin Dr., Sterling Hts., MI 48310').addTo(map),
+	KiwClubCosDet= L.marker([42.536561, -83.391327]).bindPopup('Kiwanis Club of Cosmopolitan Detroit (1998). 6886 E. Nashway Dr., West Bloomfield, MI 48232').addTo(map),
+	KiwClubDet= L.marker([42.336922, -83.024480]).bindPopup('Kiwanis Club of Detroit (1998). 2170 E. Jefferson, Detroit, MI 48017').addTo(map),
+	Lipunang= L.marker([42.108772, -83.148835]).bindPopup('Lipunang Tagalog (1998). 27285 E. River Road, Grosse Ile, MI 48138').addTo(map),
+	MoveFreePhil= L.marker([42.478480, -83.181922]).bindPopup('Movement For a Free Phillipines (1998). 13361 Ludlow, Huntington Woods, MI 48070').addTo(map),
+	Novo= L.marker([42.412370, -83.460269]).bindPopup('Novo Eciiano of Michigan (1998). 17413 Pon Valley Drive, Northville, MI 48169').addTo(map),
+	Pangasinan= L.marker([42.492017, -83.253418]).bindPopup('Pangasinan Club of Michigan (1998). 21160 Dartmouth, Southfield, MI 48076').addTo(map),
+	Pasadena= L.marker([42.336946, -83.024480]).bindPopup('Pasadena Club of Michigan (1998). 2170 E. Jefferson, Detroit, MI').addTo(map),
+	PhilAmLions= L.marker([42.651967, -83.137967]).bindPopup('Phil-Am Lions Club of Metro Detroit (1998). 244 Prospect Drive, Rochester Hills, MI 48307').addTo(map),
+	PhilAmSen= L.marker([42.356828, -83.335808]).bindPopup('Phil-Am Senior Citizens of Mich. (1998). 9018 Beatrice St., Livonia, MI 48150').addTo(map),
+	PhilAmAssocInc= L.marker([42.345740, -83.075970]).bindPopup('Philippine American Assoc., Inc. (1998). 4120 Commonwealth, Detroit, MI 48208').addTo(map),
+	PhilAmFamAssoc= L.marker([42.334707, -83.469441]).bindPopup('Philippine American Family Association (1998). 7000 Woonsocket, Canton, MI 48187').addTo(map),
+	PhilAmSenMetDet= L.marker([42.433793, -82.880855]).bindPopup('Philippine American Senior Citizens of Metro Detroit (1998). 50 Belle Mead, Grosse Pointe Shores, MI').addTo(map),
+        PhilAmStudSoc= L.marker([42.728476, -84.478376]).bindPopup('Philippine American Student Soc. (1998). Michigan State University, 209 Bessey Hall, East Lansing, MI 48825').addTo(map),
+	PhilAssocNMI= L.marker([43.476853, -84.086007]).bindPopup('Philippine Association of Northeastern Michigan (1998). 8741 White Beech Dr., Saginaw, MI 48603').addTo(map),
+	PhilHistSoc= L.marker([42.799574, -83.712096]).bindPopup('Philippine Historical Society (1998). 612 Hickory St., Fenton, MI 48030').addTo(map),
+	PhilMichClub= L.marker([42.268049, -83.760424]).bindPopup('Philippine Michigan Club (1998). University of Michigan, 1101 Vandusen, Ann Arbor, MI 48103').addTo(map),
+	Saluyot= L.marker([42.435122, -83.218039]).bindPopup('Saluyot Club of Michigan (1998). 19494 Femore, Detroit, MI 48235').addTo(map),
+	SamahangFilOak= L.marker([42.649209, -83.437893]).bindPopup('Samahang Filipino NG Oakland (1998). 7658 Vamoco, Waterford, MI 48327').addTo(map),
+	SamahangTaga= L.marker([42.433499, -82.882550]).bindPopup('Samahang Taga Bataan (1998). 69 Belle Mead, Grosse Pointe Shores, MI 48236').addTo(map),
+	UofSanto= L.marker([42.598541, -83.261803]).bindPopup('University of Santo Tomas-Medical Alumni of Michigan (1998). 2828 Colonial Trail, Bloomfield Hills, MI 480302').addTo(map),
+	Waray= L.marker([42.553827, -83.128636]).bindPopup('Waray Waray International Org. (1998). 1093 Larchwood, Troy, MI 48083').addTo(map);
+		
+    var NinDecade=L.layerGroup([Aklanon, Acj, AngBis, Apag, Bicol, Bolanon, Cagayan, Central, Circulo, Downriver, FarEast, FilAmClubPont, Filamco, Fasa, FilStuSoc, FilWomen, GreatLans, Ilocano, Kabataan, Kahirup, KiwClubMetDet, KiwClubCosDet, KiwClubDet, Lipunang, MoveFreePhil, Novo, Pangasinan, Pasadena, PhilAmLions, PhilAmSen, PhilAmAssocInc, PhilAmFamAssoc, PhilAmSenMetDet, PhilAmStudSoc, PhilAssocNMI, PhilHistSoc, PhilMichClub, Saluyot, SamahangFilOak, SamahangTaga, UofSanto, Waray]);	
+	
+    var Bicol=L.marker([42.574361, -83.079638]).bindPopup('Bicol Association of Michigan (1983). 2953 Sylvan, Sterling Heights, MI 48077').addTo(map),
+	FedoFilCluboMI=L.marker([42.279466, -83.282288]).bindPopup('Federation of Filipino Clubs of Michigan (1983). 25101 Colgate, Dearborn, MI 48125').addTo(map),
+	FilAmCathClub=L.marker([42.666489, -83.299472]).bindPopup('Filipino American Catholic Club (1983). 16 E. Rutgers, Pontiac, MI 48085').addTo(map),
+	FilAmAssoc1=L.marker([42.462383, -82.937617]).bindPopup('Filipino-American Association (1983). 22165 Normandy, East Detroit, MI 48021').addTo(map),
+	FilPontiac=L.marker([42.666227, -83.299476]).bindPopup('Filipino American Club of Pontiac (1983). 18 E. Rutgers, Pontiac, MI 48055').addTo(map),
+        FilAmComCouncil=L.marker([42.474065, -83.206489]).bindPopup('Filipino American Community Council (1983). 15928 W. Ten Mile Rd., Southfield, MI 48075 ').addTo(map),
+	FilAmSWMI=L.marker([42.309114, -85.674818]).bindPopup('Filipino-American Southwestern Michigan (1983). 2285 Signal Hill, Kalamazoo, MI 49009').addTo(map),
+	FilWomClubMetDet=L.marker([42.613331, -83.165944]).bindPopup('Filipino Women’s Club of Metro Detroit (1983). 822 Keaton, Troy, MI 48098').addTo(map),
+	KabaSamaPhil=L.marker([42.462422, -82.937607]).bindPopup('Kabataan Samahang Philipino Ng Michigan (1983). 22165 Normandy, E. Detroit, MI 48021').addTo(map),
+	KiwClubCosDet2=L.marker([42.398541, -83.090945]).bindPopup('Kiwanis Club of Cosmopolitan Detroit (1983). 27 Colorado, Highland Park, MI 48203').addTo(map),
+	KiwClubMetDet2=L.marker([42.572526, -83.067801]).bindPopup('Kiwanis Club of Metropolitan Detroit (1983). 4216 Lin Dr., Sterling Heights, MI 48077').addTo(map),
+	KiwClubWayne=L.marker([42.342052, -83.499018]).bindPopup('Kiwanis Club of Wayne County (1983). 46636 Bartlett Dr., Canton, MI 48187').addTo(map),
+	PangasinanClubMI=L.marker([42.604536, -83.273586]).bindPopup('Pangasinan Club of Michigan (1983). 2478 Parcells Circle, Bloomfield Hills, MI 48013').addTo(map),
+	PhilAmClub=L.marker([42.734958, -84.563022]).bindPopup('Philippine American Club (1983). 732 W. Ottawa, Lansing, MI 48915').addTo(map),
+	PACCM2=L.marker([42.552341, -83.055296]).bindPopup('Philippine-American Community Center of Michigan (1983). 35243 Davison Dr., Sterling Heights, MI 48077').addTo(map),
+	PhilAmLans=L.marker([42.727441, -84.648696]).bindPopup('Philippine-American Lansing (1983). 6741 Picketts Way, Lansing, MI 48917').addTo(map),
+	PhilAssocFlint=L.marker([42.837065, -83.730586]).bindPopup('Philipino Association of Greater Flint (1983). 13162 Torrey Rd., Fenton, MI 48430').addTo(map),
+	PhilMichClub2=L.marker([42.297092, -83.719319]).bindPopup('Philippine Michigan Club (1983). 1700-10 Murfin, Ann Arbor, MI 48105 ').addTo(map),
+	PhilTechSocMI=L.marker([42.575615, -83.064975]).bindPopup('Philippine Technological Society of Michigan (1983). 4445 Ardmore, Sterling Heights, MI 48077 ').addTo(map),
+	SamahangPhilNGOak=L.marker([42.630701, -83.340760]).bindPopup('Samahang Philippino NG, Oakland (1983). 2745 Woodbine Dr., Pontiac, MI 48054').addTo(map),
+	Silliman=L.marker([42.754437, -84.467457]).bindPopup('Silliman Alumni Association (1983). 1820 Foxcroft, East Lansing, MI 48823').addTo(map),
+	UofPhilAlum=L.marker([42.445775, -82.880870]).bindPopup('University of the Philippines Alumni Association of Michigan (1983). 575 Canterbury, Grosse Pte, Woods, MI 48236').addTo(map);
+
+    var EighDecade=L.layerGroup([Bicol, FedoFilCluboMI, FilAmCathClub, FilAmAssoc1, FilPontiac, FilAmComCouncil, FilAmSWMI, FilWomClubMetDet, KabaSamaPhil, KiwClubCosDet2, KiwClubMetDet2, KiwClubWayne, PangasinanClubMI, PhilAmClub, PACCM2, PhilAmLans, PhilAssocFlint, PhilMichClub2, PhilTechSocMI, SamahangPhilNGOak, Silliman, UofPhilAlum]);
+	
+    var CirculoPamp=L.marker([42.573358, -83.277747]).bindPopup('Circulo Pampangueno of Michigan (1973). 4519 Ranch Land, Bloomfield Hills, MI 48013').addTo(map),
+	FarEastUAlum=L.marker([42.532256, -83.263224]).bindPopup('Far Eastern University Alumni Association (1973). 7383 Lahser Rd, Birmingham, MI').addTo(map),
+	FilStudSoc2=L.marker([42.357735, -83.070916]).bindPopup('Filipino Student Society (1973). Wayne State University, 351 Student Center Bldg, Detroit, MI 48202').addTo(map),
+	FilWomClubMetDet2=L.marker([42.613600, -83.243014]).bindPopup('Filipino Women’s Club of Metropolitan Detroit (1973). 1933 Hunters Ridge, Bloomfield Hills, MI 48013').addTo(map),
+	GreatLansFilAm=L.marker([42.734950, -84.563022]).bindPopup('Greater Lansing Filipino-American Club (1973). 732 W. Ottawa St., Lansing, MI 48915').addTo(map),
+	IlocanoAssoc=L.marker([42.595402, -83.113677]).bindPopup('Ilocano Association of Michigan (1973). 5260 Westmore Land, Troy, MI 48098').addTo(map),
+	KabataanSanaPhil=L.marker([42.462422, -82.937607]).bindPopup('Kabataan Sanahang Philipino NG Michigan (1973). 22165 Normandy, East Detroit, MI 48021').addTo(map),
+	KiwClubCosDet3=L.marker([42.330653, -83.222937]).bindPopup('Kiwanas Club of Cosmopolitan Detroit (1973). 5709 Brace, Detroit, MI 48228').addTo(map),
+	KiwClubWayne2=L.marker([42.306139, -83.435938]).bindPopup('Kiwanas Club of Wayne County West (1973). 472 Georgetown, Canton, MI 48187').addTo(map),
+	KiwClubWest=L.marker([42.430841, -83.410581]).bindPopup('Kiwanas Club of Westland (1973). 19673 Sussex, Livonia, MI 48152').addTo(map),
+	MoveFreePhil2=L.marker([42.478480, -83.181911]).bindPopup('Movement for a Free Philippines (1973). 13361 Ludlow, Huntington Woods, MI 48070').addTo(map),
+	Novo2=L.marker([42.510326, -83.389072]).bindPopup('Novo Eciiano of Michigan (1973). 29265 Creekbend Dr., Farmington Hill, MI 48331').addTo(map),
+	Pangasinan2=L.marker([42.415066, -83.449685]).bindPopup('Pangasinan Club of Michigan (1973). 17410 Victor Dr., Northville, MI 48167').addTo(map),
+	PhilAmLions2=L.marker([42.578018, -83.277876]).bindPopup('Phil-Am Lions Club of Metro Detroit (1973). 809 Pine Thistle Ln, Bloomfield Hills, MI 48013').addTo(map);
+
+    var SevDecade=L.layerGroup([CirculoPamp, FarEastUAlum, FilStudSoc2, FilWomClubMetDet2, GreatLansFilAm, IlocanoAssoc, KabataanSanaPhil, KiwClubCosDet3, KiwClubWayne2, KiwClubWest, MoveFreePhil2, Novo2, Pangasinan2, PhilAmLions2]);
+	
+    var FilClubHouse=L.marker([42.396319, -83.026666]).bindPopup('Filipino Club House (1961). 9115 St. Cyril St., Detroit, MI').addTo(map);
+	
+    var SixDecade=L.layerGroup([FilClubHouse]);
+	
+    var FedoPhilClubMI2=L.marker([42.373926, -82.983733]).bindPopup('Federation of Philipino Clubs of Michigan (1951). 3410 Harding, Detroit, MI, 48214').addTo(map); 
+	
+    var FifDecade=L.layerGroup([FedoPhilClubMI2]);
+	
+    var Axelson=L.marker([42.270195, -83.742696]).bindPopup('Axelson, Rudolph A. (1940-41). Fletcher Hall, Ann Arbor, MI, University of Michigan').addTo(map),
+	Battad=L.marker([42.279581, -83.739604]).bindPopup('Battad, Jesus J. (1940-41). 213 S. Thayer St., Ann Arbor, MI, University of Michigan').addTo(map),
+	Bovlongan=L.marker([42.280311, -83.739135]).bindPopup('Bovlongan, Deogracias (1940-41). 810 E. Washington St., Ann Arbor, MI, University of Michigan').addTo(map),
+	Castro=L.marker([42.274669, -83.735402]).bindPopup('Castro, Miss Esperanza R. & Cortes, Miss Gloria D. (1940-41). 609 E. University Ave., Ann Arbor, MI, University of Michigan').addTo(map),
+	Demandante=L.marker([42.278216, -83.731281]).bindPopup('Demandante, Miss Primitiva (1940-41). 402 Observatory St., Ann Arbor, MI, University of Michigan').addTo(map),
+	Estavillo=L.marker([42.275092, -83.729238]).bindPopup('Estavillo, Federico E. (1940-41). 1513 S. University Ave., Ann Arbor, MI, University of Michigan').addTo(map),
+	Gamet=L.marker([42.274258, -83.746806]).bindPopup('Gamet, Leon G. (1940-41). 215 E. Madison St., Ann Arbor, MI, University of Michigan').addTo(map),
+	Johnson=L.marker([42.255621, -83.597175]).bindPopup('Johnson, Miss Cecil E. (1940-41). 715 Haven Ave., Ann Arbor, MI, University of Michigan').addTo(map),
+	MacMillan=L.marker([42.276936, -83.741554]).bindPopup('MacMillan, Miss Ann R. (1940-41). 305 Helen Newberry Res., Ann Arbor, MI, University of Michigan').addTo(map),
+	Morales=L.marker([42.273925, -83.735260]).bindPopup('Morales, Alfredo J. (1940-41). 1109 Willard St., Ann Arbor, MI, University of Michigan ').addTo(map),
+	Matutino=L.marker([42.274838, -83.747391]).bindPopup('Matutino, Justo A. (1940-41). 541 S. Fourth Ave., Ann Arbor, MI, Law, University of Michigan').addTo(map),
+	Salgado=L.marker([42.276551, -83.735254]).bindPopup('Salgado, Eduardo A. & Salgado, Miss Paz P. (1940-41). 538 Church St., Ann Arbor, MI, University of Michigan').addTo(map),
+	Shearer=L.marker([42.275401, -83.742384]).bindPopup('Shearer, Alfred M. Jr. (1940-41). 209 Chicago House, Ann Arbor, MI, University of Michigan').addTo(map),
+	Toralballa=L.marker([42.279879, -83.738999]).bindPopup('Toralballa, Leopoldo V. (1940-41). 209 S. Thayer St., Ann Arbor, MI, University of Michigan').addTo(map),
+	Zeskind=L.marker([42.272942, -83.735231]).bindPopup('Zeskind, Marvin L. (1940-41). 338 Prescott House, Ann Arbor, MI, University of Michigan').addTo(map),
+	Goloyugo=L.marker([42.335797, -83.029435]).bindPopup('Goloyugo, Victor (1949). 1579 E. Jefferson Ave. Detroit, MI. Painter.').addTo(map),
+	Temple=L.marker([42.395264, -82.906553]).bindPopup('Temple, Wallace A. (1949) 184 Fisher Ave, Grosse Point, MI. Legal Advisor of Filipino American Citizens of Michigan').addTo(map),
+	Soriano=L.marker([42.338167, -83.097085]).bindPopup('Soriano, Dr. Dominador (1949). 3932 25th St., Detroit, MI. Doctor of Medicine at St. Marys Hospital').addTo(map),
+	Teodoro=L.marker([42.367402, -83.096640]).bindPopup('Teodoro, Donato (1949). 2048 Delaware Ave., Detroit, MI. Assistant Instructor at University of Detroit').addTo(map);	
+	
+    var FourDecade=L.layerGroup([Goloyugo, Temple, Soriano, Teodoro, Axelson, Battad, Bovlongan, Castro, Demandante, Estavillo, Gamet, Johnson, MacMillan, Morales, Matutino, Salgado, Shearer, Toralballa, Zeskind]);
+	
+    var Aloot= L.marker([42.276640, -83.729635]).bindPopup('Aloot, Lorenzo A. (1934), 1412 Geddes, Ann Arbor, MI, University of Michigan').addTo(map),
+	Bendana=L.marker([42.281873, -83.739987]).bindPopup('Bendana, Miss Adelaide M. (1934). 119 N. Thayer, Ann Arbor, MI, University of Michigan').addTo(map),
+	Erum=L.marker([42.269645, -83.727629]).bindPopup('Erum, Emiliano N. (1934). 1030 Baldwin, Ann Arbor, MI, University of Michigan').addTo(map),
+	Graganta=L.marker([42.277660, -83.742243]).bindPopup('Graganta, Nicholas B. (1934). 518 E. Williams, Ann Arbor, MI, University of Michigan').addTo(map),
+	Gregorio=L.marker([42.280290, -83.728501]).bindPopup('Gregorio, Basiliso H. (1934). 1434 Washington Hgts, Ann Arbor, MI, University of Michigan').addTo(map),
+	Miranda=L.marker([42.280809, -83.742396]).bindPopup('Miranda, Dalmacio S. & Hayag, Teodolfo A. (1934). 517 E. Washington, Ann Arbor, MI, University of Michigan').addTo(map),
+	Reyes=L.marker([42.281972, -83.742059]).bindPopup('Reyes, Miss Rosario D. (1934). 520 E. Ann, Ann Arbor, MI, University of Michigan').addTo(map),
+	Stroebe=L.marker([42.270635, -83.734765]).bindPopup('Stroebe, George W. (1934). 928 Church, Ann Arbor, MI, University of Michigan').addTo(map),
+	Teodoro=L.marker([42.166551, -83.776365]).bindPopup('Teodoro, Donato R. (1934). 323 E. Williams, Ann Arbor, MI, University of Michigan').addTo(map),
+	Abara=L.marker([42.275765, -83.743941]).bindPopup('Abara, Andres (1934). 509 S. Division, Ann Arbor, MI, University of Michigan').addTo(map),
+	Lorenzo=L.marker([42.283238, -83.740433]).bindPopup('Lorenzo, Sabastion B. (1934). 711 Catherine, Ann Arbor, MI, University of Michigan ').addTo(map),
+	Johnson=L.marker([42.255847, -83.597174]).bindPopup('Johnson, Miss Mary B. (1934). 715 Haven, Ann Arbor, MI, University of Michigan').addTo(map),
+	Nell=L.marker([42.272321, -83.726365]).bindPopup('Nell, Edward R. (1934). 800 Oxford Rd., Ann Arbor, MI, University of Michigan').addTo(map);
+	
+    var ThirDecade=L.layerGroup([Aloot, Bendana, Erum, Graganta, Gregorio, Miranda, Reyes, Stroebe, Teodoro, Abara, Lorenzo, Johnson, Nell]);
+    
+    var Montinella = L.marker([42.347819, -83.060400]).bindPopup('Montinela, E.(Jaw Iloilo) (1922). 93 Parson Street, Detroit, Mich. Auto engineer, Michigan State Auto School').addTo(map),
+	Manzanero = L.marker ([42.415848, -83.100520]).bindPopup('Manzanero, Esteban M. (1921), 80 Church St, Detroit, MI. Civil Engineering, Valparaiso University').addTo(map),
+        Ruiz = L.marker ([42.374284, -82.975360]).bindPopup('Ruiz, Elias L. (1921), 2946 St. Jean Ave, Detroit, MI. Civil Engineering, University of Detroit').addTo(map),
+        Conlu = L.marker ([42.361012, -82.953085]).bindPopup('Conlu, Mariano (1921), 443 Connors Ave. Detroit, MI. Cass Technical High School').addTo(map),
+        Espiritu = L.marker ([42.369746, -82.971301]).bindPopup('Espiritu, Celestino (1921), 11488 Kercheral Ave, Detroit, MI. Machinist, Ford Motor Co.').addTo(map),
+        Hernandez = L.marker ([42.415856, -83.100510]).bindPopup('Hernandez, Amado Z. (1921), 80 Church St. Detroit, MI, Civil Engineering, Tri-State College').addTo(map),
+        Aguilar = L.marker([42.347811, -83.060400 ]).bindPopup('Buenaventura Aguilar (1922), 93 Parsons St., Detroit, MI, Engineering, Detroit Junior College').addTo(map),
+        Casaclang = L.marker([42.334716, -83.052824]).bindPopup('Casaclang, Cornelio E. (1922), 225 Bagley Ave., Detroit, MI, Mechanical Engineering, University of Detroit').addTo(map),
+        Manzanero2 = L.marker([42.352196, -83.056827]).bindPopup('Manzanero, Dr. F.M. (1922), Womans Hospital, Detroit, MI, Medicine, Baylor College of Medicine').addTo(map),
+        Paguyo = L.marker([42.353534, -83.065245]).bindPopup('Paguyo, Manuel A. (1922) 4638 Cass Ave, Detroit, MI, Literary, Detroit Junior College').addTo(map),
+        Villareal = L.marker([42.337382, -83.053920]).bindPopup('Villareal, Mariano Conltj y (1922) 126 West Columbia Street, Detroit, MI, Commercial auto mechanic, Cass Technical High School').addTo(map),
+	Navarra = L.marker([42.334700, -83.052641]).bindPopup('Navarra, Salvador F. (1922), 225 Bagley Ave, Detroit MI. General course, Central High School').addTo(map);
+	
+    var Melanio = L.marker([42.274468, -83.738242]).bindPopup('Javierto, Melanio (1921) 631 Tappan Ave., Ann Arbor, MI. Mechanical Engineering, College of Engineering').addTo(map),
+        Jose = L.marker([42.272759, -83.743803]).bindPopup('Jose, Esteban L. (1921), 425 Cross St. Ann Arbor, MI. English, University of Michigan; Suguitan, Juan C. Civil Engineering, Uni of Michigan; Suyat, Donato T. High School, Ann Arbor High').addTo(map),
+        Kaparas = L.marker([42.275250, -83.746037]).bindPopup('Kaparas, Manuel D. (1921), 308 Packard St. Ann Arbor, MI, Medicine, University of Michigan').addTo(map),
+        Fernandez = L.marker([42.269303, -83.735333]).bindPopup('Fernandez, Salvador (1921), 1015 East University Street, Ann Arbor, MI, Chemical Engineering, Uni of Michigan').addTo(map),
+        Fernando = L.marker([42.281488, -83.735556]).bindPopup('Fernando, Alejandro (1921), 110 Glen Ave, Ann Arbor, MI, Political Science, Uni of Michigan').addTo(map), 
+        Maranon = L.marker([42.271196, -83.739413]).bindPopup('Maranon, Joaquin M. (1921), 822 Oakland Ave, Ann Arbor, MI, Plant Chemistry, Uni of Michigan').addTo(map),
+        Marare = L.marker([42.275301, -83.733802]).bindPopup('Marare, Vicente Del R. (1921), 215 S. University Ave, Ann Arbor,  MI, Municipal Government, Uni of Michigan').addTo(map),
+        Abada = L.marker([42.271220, -83.739413]).bindPopup('Abada, Esteban R. (1921), 822 Oakland Ave, English, Uni of Michigan').addTo(map),
+        Asuzano = L.marker([42.270331, -83.740978]).bindPopup('Asuzano, Eustaquio A. (1921), 914 South State St. Civil Engineering, Uni of Michigan').addTo(map),
+	Villanueva2=L.marker([42.281481, -83.739290]).bindPopup('Villanueva, Eugenio S. (1928-29), 805 E. Huron, Ann Arbor, MI, University of Michigan').addTo(map),
+	Pineda=L.marker([42.731921, -84.482343]).bindPopup('Pineda, Felix A. (1922). Box 733, Michigan Agricultural College. East Lansing, MI. Agricultrue, Michigan Agriculture College.').addTo(map),
+	Gracia=L.marker([42.969621, -85.653765]).bindPopup('Gracia, Catalino de (1922). 321 Benson Ave. Grand Rapids, MI. Education, University of Michigan.').addTo(map);
+	
+    var SecDecade=L.layerGroup([Pineda, Gracia, Villanueva2, Melanio, Jose, Kaparas, Fernandez, Fernando, Maranon, Marare, Abada, Asuzano, Montinella, Manzanero, Ruiz, Conlu, Espiritu, Hernandez, Aguilar, Casaclang, Manzanero2, Paguyo, Villareal, Navarra]);
+    
+    var Navarro = L.marker([42.350688, -83.059955]).bindPopup('Navarro, Vincente A. (1919), 11 E. Alexandrine, Detroit MI.').addTo(map),
+	Valenzuela = L.marker([42.349475, -83.006129]).bindPopup('Jose T. Valenzuela (1917), 992 Canton Ave, Detroit, MI, Chemical Engineering, University of Michigan').addTo(map);
+	
+    var Paulilio = L.marker([42.279837, -83.739941]).bindPopup('Paulilio, Alejandro J. (1917), 236 S. Thayer St., Ann Arbor, MI, Law, University of Michigan').addTo(map),
+	Racelis = L.marker([42.277515, -83.734311]).bindPopup('Racelis, Antonio P. (1917), 1219 Geddes Ave, Ann Arbor, MI, Forestry, University of michigan; Ramos, Alfredo. (1917), Law, University of Michigan').addTo(map),
+	Villanueva = L.marker([42.280192, -83.739727]).bindPopup('Villanueva, Guillermo (1917), 107 S. Thayer St., Ann Arbor, MI, Law, University of Michigan; Leon, Sancho B. De (1917). Civil Engineering, University of Michigan').addTo(map),
+	Asuzano = L.marker([42.279742, -83.739963]).bindPopup('Asuzano, Eustaquio A. (1917), 236 S. Thayer St. Ann Arbor, MI, Civil engineering, University of Michigan').addTo(map),
+	Gregorio = L.marker([42.272425, -83.740636]).bindPopup('Gregorio, Domingo H. (1927), 727 S. State St., Ann Arbor, MI, University of Michigan').addTo(map),
+	Allas = L.marker([42.280817, -83.742396]).bindPopup('Allas, Dominador; Arenas, Pablo J.; Balisalisa, Juan N.; Erom, Emiliano N.; Victorio, Santiago E. (1928-29). 517 E. Washington, Ann Arbor, MI, University of Michigan').addTo(map),
+        Bibat= L.marker ([42.279891, -83.739110]).bindPopup('Bibat, Balbino S.,Nollido, Rufino S.,Rivera, Domingo (1928-29), 810 E. Washington, Ann Arbor, MI, University of Michigan').addTo(map),
+        Bueno = L.marker([42.276731, -83.743184]).bindPopup('Bueno, Maximo G.; Estavillo, Frederico (1928-29). 432 Thompson, Ann Arbor, MI, University of Michigan').addTo(map), 
+        Caasi = L.marker([42.282361, -83.747737]).bindPopup('Caasi, Licerio C. (1928-29), 112 E. Ann, Ann Arbor, MI, University of Michigan').addTo(map),
+        Castrense=L.marker([42.281413, -83.735552]).bindPopup('Castrense, Guillermo (1928-29), 102 Glen, Ann Arbor, MI, University of Michigan').addTo(map), 
+        Dumbrique=L.marker([42.277419, -83.743218]).bindPopup('Dumbrique, Francisco E. (1928-29), 413 Thompson, Ann Arbor, MI, University of Michigan').addTo(map), 
+        Lanting=L.marker([42.273926, -83.745814]).bindPopup('Lanting, Juan L.; Masakayan, Honorato B. (1928-29), 308 E. Madison, Ann Arbor, MI, University of Michigan').addTo(map),
+        Lopez=L.marker([42.276184, -83.742109]).bindPopup('Lopez, Benito H. (1928-29), 604  E. Jefferson, Ann Arbor, MI, University of Michigan').addTo(map),
+        Manual =L.marker([42.279865, -83.739617]).bindPopup('Manual, Canuto G.; Miranda, Dalmacio S.(1928-29), 203 S. Thayer St., Ann Arbor, MI, University of Michigan').addTo(map), 
+        Matutino=L.marker([42.274756, -83.746120]).bindPopup('Matutino, Justo A.(1928-29), 545 S. Fifth St., Ann Arbor, MI, University of Michigan').addTo(map),
+        Padilla=L.marker([42.280331, -83.743130]).bindPopup('Padilla, Sinforoso G. (1928-29), 523 E. Washington, Ann Arbor, MI, University of Michigan').addTo(map),
+        Salvosa=L.marker([42.278721, -83.757540]).bindPopup('Salvosa, Luis R.(1928-29), 338 Mulholand, Ann Arbor, MI, University of Michigan').addTo(map),
+        Sevilla=L.marker([42.279839, -83.739600]).bindPopup('Sevilla, Exequiel S.(1928-29), 209 S. Thayer, Ann Arbor, MI, University of Michigan').addTo(map);
+	
+    var FirDecade=L.layerGroup([Navarro, Valenzuela, Paulilio, Racelis, Villanueva, Asuzano, Gregorio, Allas, Bibat, Bueno, Caasi, Castrense, Dumbrique, Lanting, Lopez, Manual, Matutino, Padilla, Salvosa, Sevilla]);
+
+    var Artiaga=L.marker([42.279852, -83.739043]).bindPopup('Artiaga, Santiago (1901), 812 E. Washington, Ann Arbor, MI, Civil Engineering, University of Michigan ').addTo(map),
+	Artiaga2=L.marker([42.278341, -83.743218]).bindPopup('Artiaga, Santiago (1902), 327 Thomson St, Ann Arbor, MI, Civil Engineering, University of Michigan ').addTo(map),
+	Artiaga3=L.marker([42.271559, -83.742737]).bindPopup('Artiaga, Santiago (1904), 512 Hill St., Ann Arbor, MI, Civil Engineering, University of Michigan').addTo(map),
+	Tecson=L.marker([42.281424, -83.740173]).bindPopup('Tecson, Juan (1901). 713 E. Huron St., Ann Arbor, MI, Civil Engineering, University of Michigan').addTo(map),
+	Tecson2=L.marker([42.276130, -83.734639]).bindPopup('Tecson, Juan (1902). 520 Church St., Ann Arbor, MI, Civil Engineering, University of Michigan').addTo(map),
+	Tecson3=L.marker([42.278025, -83.756249]).bindPopup('Tecson, Juan (1904). 326 Fifth Ave., Ann Arbor, MI, Civil Engineering, University of Michigan').addTo(map);
+	
+    var ZerDecade=L.layerGroup([Artiaga, Artiaga2, Artiaga3, Tecson, Tecson2, Tecson3]);
+	
+    var OverlayMaps = {
+          "1900-1909" : ZerDecade,
+	  "1910-1919" : FirDecade,
+          "1920-1929" : SecDecade,
+	  "1930-1939" : ThirDecade,
+	  "1940-1949" : FourDecade,
+	  "1950-1959" : FifDecade,
+	  "1960-1969" : SixDecade,
+	  "1970-1979" : SevDecade,
+	  "1980-1989" : EighDecade,
+	  "1990-1999" : NinDecade,
+	  "2000-2009" : TenDecade
+     };
+                   
+     L.control.layers(null,OverlayMaps).addTo(map);
+  </script>
+</body>
+</html>
